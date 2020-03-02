@@ -11,21 +11,7 @@ public class StringArrayUtils {
      * @return an array with all elements between `startingIndex` and `endingIndex`
      */
     public static String[] getSubArray(String[] arrayToBeSpliced, int startingIndex, int endingIndex) {
-        if(endingIndex < startingIndex) {
-
-            throw new IllegalArgumentException("Out of Bounds, not a valid index");
-
-        }
-
-        String[] result = new String[endingIndex-startingIndex];
-
-        for(int i = startingIndex, j = 0; i < endingIndex; i++, j++){
-
-            result[j] = arrayToBeSpliced[i];
-
-        }
-
-        return result;
+       return null;
 
     }
 
