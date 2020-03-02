@@ -11,7 +11,6 @@ public class Inventory {
      */
     public Inventory(List<String> strings) {
 
-
     }
 
     /**
