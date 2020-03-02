@@ -54,6 +54,10 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+
+        string = reverse(string);
+        string = removeCharacters(string,charactersToRemove);
+        return string;
     }
 }
+

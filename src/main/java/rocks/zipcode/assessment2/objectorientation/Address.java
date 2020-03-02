@@ -4,8 +4,16 @@ package rocks.zipcode.assessment2.objectorientation;
  * @author leon on 28/11/2018.
  */
 public class Address {
+
     public Address() {
+        String addressLine1;
+        String addressLine2;
+        String city;
+        String state;
+        String zipcode;
+
     }
+
 
     /**
      * @param addressLine1 - first address line
@@ -15,38 +23,41 @@ public class Address {
      * @param zipcode - zipcode of region
      */
     public Address(String addressLine1, String addressLine2, String city, String state, String zipcode) {
+
     }
 
+
+
     public String getAddressLine1() {
-        return null;
+        return getAddressLine1();
     }
 
     public void setAddressLine1(String addressLine1) {
     }
 
     public String getAddressLine2() {
-        return null;
+        return getAddressLine2();
     }
 
     public void setAddressLine2(String addressLine2) {
     }
 
     public String getCity() {
-        return null;
+        return getCity();
     }
 
     public void setCity(String city) {
     }
 
     public String getState() {
-        return null;
+        return getState();
     }
 
     public void setState(String state) {
     }
 
     public String getZipcode() {
-        return null;
+        return getZipcode();
     }
 
     public void setZipcode(String zipcode) {
