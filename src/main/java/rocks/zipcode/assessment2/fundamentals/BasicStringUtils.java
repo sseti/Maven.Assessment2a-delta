@@ -43,10 +43,13 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        String strNew = string.replace(charactersToRemove, "");
-
-        return strNew;
+        for (int i = 0; i < charactersToRemove.length(); i++) {
+            Character removeChar = charactersToRemove.charAt(i);
+            string = string.replaceAll(removeChar.toString(), "");
+        }
+        return string;
     }
+
 
     /**
      * @param string - the string to be manipulated

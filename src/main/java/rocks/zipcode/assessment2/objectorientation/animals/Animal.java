@@ -13,7 +13,7 @@ public class Animal {
     Address address;
 
     public Animal() {
-        this.id = id;
+        this.id = null;
         this.owner = new Person();
         this.address = owner.getAddress();
 
@@ -24,28 +24,31 @@ public class Animal {
      * @param owner - owner of animal
      */
     public Animal(Long id, Person owner) {
-        this.id = null;
-        this.owner = new Person();
+        this.id = id;
+        this.owner = owner;
         this.address = owner.getAddress();
 
     }
 
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
+        this.id= id;
     }
 
     public Person getOwner() {
-        return owner;
+        return this.owner;
     }
 
     public void setOwner(Person owner) {
+        this.owner = owner;
+        this.address = owner.getAddress();
     }
 
     public Address getAddress() {
-        return address;
+        return this.address;
     }
 }

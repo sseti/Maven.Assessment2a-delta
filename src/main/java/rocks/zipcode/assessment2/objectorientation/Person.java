@@ -10,8 +10,8 @@ public class Person {
     Address address;
 
     /**
-     * @param id - id of person
-     * @param name - name of person
+     * @param id      - id of person
+     * @param name    - name of person
      * @param address - address of person
      */
     public Person(Long id, String name, Address address) {
@@ -34,6 +34,7 @@ public class Person {
     }
 
     public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -41,6 +42,7 @@ public class Person {
     }
 
     public void setName(String name) {
+        this.name = name;
     }
 
     public Address getAddress() {
@@ -48,10 +50,15 @@ public class Person {
     }
 
     public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override
+
+
+    @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+        return this.toString().equals(o.toString());
+
     }
 }

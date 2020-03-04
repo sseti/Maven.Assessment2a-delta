@@ -6,16 +6,16 @@ package rocks.zipcode.assessment2.fundamentals;
 public class StringUtils {
     /**
      * @param stringToBePadded - string value to be flushed right
-     * @param amountOfPadding - amount of padding to be flushed left
+     * @param amountOfPadding  - amount of padding to be flushed left
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return String.format("%" + amountOfPadding+ "s", stringToBePadded);
+        return String.format("%" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
      * @param stringToBePadded - string value to be flushed left
-     * @param amountOfPadding - amount of padding to be flushed right
+     * @param amountOfPadding  - amount of padding to be flushed right
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
@@ -23,7 +23,7 @@ public class StringUtils {
     }
 
     /**
-     * @param stringToBeRepeated - string value to be repeated
+     * @param stringToBeRepeated   - string value to be repeated
      * @param numberOfTimeToRepeat - number of times to repeat `stringToBeRepeated`
      * @return the string repeated and concatenated `n` times
      */
@@ -36,9 +36,16 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return ((!string.equals(""))
-                && (string != null)
-                && (string.matches("^[a-zA-Z]*$")));
+        if (string == null) {
+            return false;
+        }
+        for (int i = 0; i < string.length(); i++) {
+            char c = string.charAt(i);
+            if (!( c >= 'A' && c <= 'Z' ) && !( c >= 'a' && c <= 'z' ) && !( c == ' ' )) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -49,7 +56,7 @@ public class StringUtils {
         try {
             Double.parseDouble(string);
             return true;
-        } catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
     }
@@ -60,6 +67,11 @@ public class StringUtils {
      */
     public static Boolean isSpecialCharacterString(String string) {
 
-        return (string == null) ? false : string.matches("[^A-Za-z0-9 ]");
+        for (Character c : string.toCharArray()) {
+            if (Character.isDigit(c) || Character.isAlphabetic(c) || Character.isSpaceChar(c)) {
+                return false;
             }
         }
+        return true;
+    }
+}
