@@ -53,8 +53,15 @@ public class Person {
         this.address = address;
     }
 
-    @Override
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address=" + address +
+                '}';
+    }
 
     @Override
     public boolean equals(Object o) {
